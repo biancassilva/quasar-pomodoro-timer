@@ -1,6 +1,8 @@
 # Quasar App (Quasar Pomoro Timer)
 
-A Quasar Framework app
+## Demo
+
+See the [live demo](http://quasarpomodorotimer.surge.sh/#/).
 
 ## Install the dependencies
 ```bash
@@ -12,15 +14,7 @@ npm install
 quasar dev
 ```
 
-### Lint the files
-```bash
-npm run lint
-```
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+Please make sure to update tests as appropriate.
