@@ -1,4 +1,4 @@
-# Quasar App (pomodoro-timer-quasar)
+# Quasar App (Quasar Pomoro Timer)
 
 A Quasar Framework app
 
