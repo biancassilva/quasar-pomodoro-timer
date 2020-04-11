@@ -2,7 +2,7 @@
   <div class="row justify-center">
     <q-card class="bg-dark col-12 q-pa-lg shadow-0" bordered>
       <div class="row">
-        <div class="col-xl-3 col-lg-3 col-md-3 col-xs-12 q-pr-sm">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 q-pa-sm">
           <q-select
             v-model="task.level"
             :options="levelOptions"
@@ -13,18 +13,17 @@
             dark
           ></q-select>
         </div>
-        <div class="col-xl-9 col-lg-9 col-md-9 col-xs-12">
+        <div class="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-xs-12 q-pa-sm">
           <q-input
             dark
             filled
             color="blue-5"
             v-model="task.description"
             label="Enter the task description"
-          >
-            <template v-slot:after>
-              <q-btn outline color="white" icon="add" stack label="Add task" @click="addTask"></q-btn>
-            </template>
-          </q-input>
+          />
+        </div>
+        <div class="col-xl-1 col-lg-1 col-md-2 col-sm-12 col-xs-12 q-pa-sm">
+           <q-btn outline color="white" class="full-width" icon="add" stack label="Add task" @click="addTask"></q-btn>
         </div>
       </div>
     </q-card>

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 text-center">
+  <div class="full-width text-center">
     <q-circular-progress
       show-value
       class="text-white q-mb-none q-mt-lg"
@@ -12,7 +12,7 @@
     >
       <span>{{minutes}}:{{seconds}}</span>
     </q-circular-progress>
-    <div class="q-gutter-x-md q-mt-lg q-mb-lg full-width q-pa-md">
+    <div class="text-center q-mt-lg q-mb-lg full-width bg-dark q-pa-md">
       <q-btn
         flat
         v-if="!pauseButton"

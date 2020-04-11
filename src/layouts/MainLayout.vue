@@ -21,7 +21,7 @@ export default {
   name: 'MainLayout',
   methods: {
     openGithub () {
-      openURL()
+      openURL('https://github.com/biancassilva/quasar-pomodoro-timer')
     }
   }
 }
