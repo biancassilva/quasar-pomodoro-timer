@@ -1,7 +1,5 @@
 # Quasar Pomoro Timer
 
-![Screenshot](https://github.com/biancassilva/quasar-pomodoro-timer/blob/master/src/statics/screen.png)
-
 ## Demo
 
 See the [live demo](http://quasarpomodorotimer.surge.sh/#/).
