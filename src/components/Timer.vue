@@ -1,16 +1,20 @@
 <template>
   <div class="full-width text-center">
+    <div class="text-center text-grey-2 full-width bg-dark q-pa-md">
+      Choose your time:
+      <q-option-group v-model="timeChoose" :options="timeOptions" color="blue" dark inline />
+    </div>
     <q-circular-progress
       show-value
       class="text-white q-mb-none q-mt-lg"
       :max="initialTime"
       :value="totalTime"
-      size="200px"
-      :thickness="0.1"
-      color="white"
+      size="230px"
+      :thickness="0.13"
+      :color="timerColor"
       track-color="dark"
     >
-      <span>{{minutes}}:{{seconds}}</span>
+      <span :class="`text-${timerColor}`">{{minutes}}:{{seconds}}</span>
     </q-circular-progress>
     <div class="text-center q-mt-lg q-mb-lg full-width bg-dark q-pa-md">
       <q-btn
@@ -51,14 +55,18 @@ export default {
   data () {
     return {
       timer: null,
+      timeChoose: 25,
       selectedTime: 25,
       pauseButton: false,
       resetButton: false,
       totalTime: 25 * 60,
-      initialTime: 25 * 60
+      timeOptions: [{ label: 'Pomodoro', value: 25 }, { label: 'Short Break', value: 5 }, { label: 'Long Break', value: 10 }]
     }
   },
   computed: {
+    initialTime () {
+      return this.timeChoose * 60
+    },
     minutes () {
       const minutes = Math.floor(this.totalTime / 60)
       return this.padTime(minutes)
@@ -67,8 +75,19 @@ export default {
       const seconds = this.totalTime - (this.minutes * 60)
       return this.padTime(seconds)
     },
-    value () {
-      return (this.seconds * this.minutes) / 60
+    timerColor () {
+      const value = this.totalTime / 60
+      return value <= 3 ? 'red-6' : value <= 10 ? 'orange-6' : 'white'
+    }
+  },
+  watch: {
+    timeChoose () {
+      this.resetTimer()
+    }
+  },
+  meta () {
+    return {
+      title: this.timer ? `${this.minutes}:${this.seconds} Pomodoro Timer` : 'Pomodoro Timer'
     }
   },
   methods: {
@@ -84,7 +103,7 @@ export default {
       this.resetButton = true
     },
     resetTimer () {
-      this.totalTime = (25 * 60)
+      this.totalTime = (this.timeChoose * 60)
       clearInterval(this.timer)
       this.timer = null
       this.resetButton = false
@@ -104,16 +123,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-.timer {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 13px solid white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 70px;
-}
-</style>

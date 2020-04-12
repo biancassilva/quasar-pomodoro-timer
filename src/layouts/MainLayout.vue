@@ -2,7 +2,17 @@
   <q-layout view="hhh Lpr lFf">
     <q-header bordered class="bg-blue-grey-9">
       <q-toolbar class="bg-dark">
-        <q-toolbar-title class="text-weight-regular text-subtitle1">Quasar Pomodoro Timer</q-toolbar-title>
+        <q-toolbar-title class="text-weight-regular text-subtitle1">
+          <q-item>
+            <q-item-section side>
+              <q-icon name="fas fa-stopwatch" size="42px" color="grey-5"></q-icon>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label lines="1">Pomodoro Timer</q-item-label>
+              <q-item-label caption class="text-grey-4">Optimize your time</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-toolbar-title>
         <q-space></q-space>
         <div class="q-gutter-x-sm">
           <q-btn icon="fab fa-github" dense color="white" @click="openGithub" flat></q-btn>

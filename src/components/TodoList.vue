@@ -23,7 +23,15 @@
           />
         </div>
         <div class="col-xl-1 col-lg-1 col-md-2 col-sm-12 col-xs-12 q-pa-sm">
-           <q-btn outline color="white" class="full-width" icon="add" stack label="Add task" @click="addTask"></q-btn>
+          <q-btn
+            outline
+            color="white"
+            class="full-width"
+            icon="add"
+            stack
+            label="Add task"
+            @click="addTask"
+          ></q-btn>
         </div>
       </div>
     </q-card>
@@ -105,18 +113,9 @@ export default {
       todoList: [],
       completedTasksList: [],
       levelOptions: [
-        {
-          label: 'Easy',
-          value: 1
-        },
-        {
-          label: 'Medium',
-          value: 2
-        },
-        {
-          label: 'Hard',
-          value: 3
-        }
+        { label: 'Easy', value: 1 },
+        { label: 'Medium', value: 2 },
+        { label: 'Hard', value: 3 }
       ],
       levelSelected: null
     }
@@ -155,24 +154,20 @@ export default {
       this.todoList.splice(pos, 1)
     },
     levelColor (lvl) {
-      switch (lvl) {
-        case 1:
-          return 'blue-5'
-        case 2:
-          return 'orange-5'
-        case 3:
-          return 'red-5'
+      const color = {
+        1: () => 'blue-5',
+        2: () => 'orange-5',
+        3: () => 'red-5'
       }
+      return color[lvl]()
     },
     levelName (lvl) {
-      switch (lvl) {
-        case 1:
-          return 'Easy'
-        case 2:
-          return 'Medium'
-        case 3:
-          return 'Hard'
+      const name = {
+        1: () => 'Easy',
+        2: () => 'Medium',
+        3: () => 'Hard'
       }
+      return name[lvl]()
     }
   }
 }
