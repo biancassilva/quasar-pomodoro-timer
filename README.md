@@ -1,4 +1,4 @@
-# Quasar App (Quasar Pomoro Timer)
+# Quasar Pomoro Timer
 
 ## Demo
 
