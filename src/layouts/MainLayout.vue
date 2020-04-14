@@ -27,8 +27,13 @@
 
 <script>
 import { openURL } from 'quasar'
+import BrowserNotifications from '../mixins/BrowserNotifications'
 export default {
   name: 'MainLayout',
+  mixins: [BrowserNotifications],
+  mounted () {
+    this.askNotificationPermission()
+  },
   methods: {
     openGithub () {
       openURL('https://github.com/biancassilva/quasar-pomodoro-timer')

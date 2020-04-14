@@ -51,12 +51,13 @@
   </div>
 </template>
 <script>
+import BrowserNotifications from '../mixins/BrowserNotifications'
 export default {
+  mixins: [BrowserNotifications],
   data () {
     return {
       timer: null,
       timeChoose: 25,
-      selectedTime: 25,
       pauseButton: false,
       resetButton: false,
       totalTime: 25 * 60,
@@ -83,6 +84,11 @@ export default {
   watch: {
     timeChoose () {
       this.resetTimer()
+    },
+    totalTime () {
+      if (this.totalTime === 0) {
+        this.showNotification('Time is up!', '', 'statics/app-logo-128x128.png')
+      }
     }
   },
   meta () {

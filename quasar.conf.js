@@ -102,8 +102,8 @@ module.exports = function (ctx) {
       workboxOptions: {}, // only for GenerateSW
       manifest: {
         name: 'Quasar Pomodoro Timer',
-        short_name: 'Quasar App',
-        description: 'A Quasar Framework app',
+        short_name: 'Pomodoro Timer',
+        description: 'Quasar Pomodoro Timer',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
