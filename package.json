@@ -1,8 +1,8 @@
 {
   "name": "pomodoro-timer-quasar",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "A Quasar Pomoro App",
+  "productName": "Quasar Pomodoro Timer",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "biasilva <biasilvabsi11@gmail.com>",

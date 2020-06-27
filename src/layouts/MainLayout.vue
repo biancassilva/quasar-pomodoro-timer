@@ -5,7 +5,7 @@
         <q-toolbar-title class="text-weight-regular text-subtitle1">
           <q-item>
             <q-item-section side>
-              <q-icon name="fas fa-stopwatch" size="42px" color="grey-5"></q-icon>
+              <q-img src="statics/tomato-timer.svg" style="width:50px"></q-img>
             </q-item-section>
             <q-item-section>
               <q-item-label lines="1">Pomodoro Timer</q-item-label>

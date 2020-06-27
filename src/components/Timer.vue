@@ -93,7 +93,7 @@ export default {
   },
   meta () {
     return {
-      title: this.timer ? `${this.minutes}:${this.seconds} Pomodoro Timer` : 'Pomodoro Timer'
+      title: this.timer ? `(${this.minutes}:${this.seconds}) Pomodoro Timer` : 'Pomodoro Timer'
     }
   },
   methods: {
